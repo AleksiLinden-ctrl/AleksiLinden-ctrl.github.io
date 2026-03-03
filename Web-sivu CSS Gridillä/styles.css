@@ -1,0 +1,117 @@
+/* Tämä sivu käyttää CSS Grid -asettelua */
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+  "header nav"
+  "aside main"
+  "footer footer";
+  gap: 10px;
+  min-height: 100vh;
+  padding: 10px;
+  background: linear-gradient(90deg, #ff1493, #ff69b4);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Oppilas muokkaa näitä */
+.header, .navbar, .aside, .main, .footer {
+  background: linear-gradient(90deg, #ff4d6d, #ff758f);
+  padding: 15px;
+  border-radius: 100px;
+  color: #dc143c;
+}
+
+.rakkaus {
+  max-width: 100%;
+  height: auto;
+  border-radius: 100px;
+}
+
+.main {
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffb6c1;
+  grid-area: main;
+}
+
+.aside h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+}
+
+.header {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #ffc0cb;
+  grid-area: header;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #ff4d6d, #ff758f);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  grid-area: nav;
+  font-size: x-large;
+}
+
+.navbar nav {
+  width: 100%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.navbar ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #FFFFFF;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: block;
+  padding: 10px;
+}
+
+.navbar ul li a:hover {
+  color: #ffd6e0;
+  transform: scale(1.1);
+}
+
+.aside {
+  grid-area: aside;
+  font-size: larger;
+}
+
+.footer {
+  grid-area: footer;
+  font-size: larger;
+}
+
+@media (max-width: 768px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+}
+
+.main {
+  font-size: 30px;
+}
